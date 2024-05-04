@@ -5,3 +5,6 @@
 project.godot
 *.zip
 *.tmp
+*.csproj
+addons/godot_rl_agents/onnx/*
+logs/*

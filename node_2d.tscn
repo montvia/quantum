@@ -1,0 +1,32 @@
+[gd_scene load_steps=9 format=3 uid="uid://dykd6q8ha6yb5"]
+
+[ext_resource type="Script" path="res://global.gd" id="1_8hg6j"]
+[ext_resource type="PackedScene" uid="uid://cbql6yc4eqw5j" path="res://jugador.tscn" id="1_g8fa1"]
+[ext_resource type="PackedScene" uid="uid://bkpbbsxksb60l" path="res://tile_map.tscn" id="2_63hgy"]
+[ext_resource type="PackedScene" uid="uid://4rjxeciyeap1" path="res://key_1.tscn" id="3_5enhy"]
+[ext_resource type="Script" path="res://addons/godot_rl_agents/controller/ai_controller_2d.gd" id="4_6r24m"]
+[ext_resource type="PackedScene" uid="uid://cfdaxpdkj5p7p" path="res://door_1.tscn" id="4_bbpv6"]
+[ext_resource type="Script" path="res://addons/godot_rl_agents/sync.gd" id="6_edg72"]
+[ext_resource type="PackedScene" uid="uid://cqbu1ahp7i0aa" path="res://return_door_1.tscn" id="8_cy2v0"]
+
+[node name="nivell_1" type="Node2D"]
+script = ExtResource("1_8hg6j")
+
+[node name="TileMap" parent="." instance=ExtResource("2_63hgy")]
+
+[node name="jugador" parent="." instance=ExtResource("1_g8fa1")]
+
+[node name="AIController2D2" type="Node2D" parent="jugador"]
+script = ExtResource("4_6r24m")
+
+[node name="key_1" parent="." instance=ExtResource("3_5enhy")]
+
+[node name="door_1" parent="." instance=ExtResource("4_bbpv6")]
+
+[node name="Sync" type="Node" parent="."]
+script = ExtResource("6_edg72")
+speed_up = 8
+
+[node name="door_2" parent="." instance=ExtResource("8_cy2v0")]
+texture_filter = 1
+position = Vector2(1432, 1984)
