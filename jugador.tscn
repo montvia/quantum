@@ -299,7 +299,7 @@ size = Vector2(96, 104)
 position = Vector2(960, 576)
 script = ExtResource("2_2k4xm")
 
-[node name="anim_spr_jugador" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -24)
 scale = Vector2(8, 8)
