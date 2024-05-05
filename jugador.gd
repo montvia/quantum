@@ -24,7 +24,7 @@ func _on_area_door_1_body_entered(_body):
 	else:
 		ai_controller_2d.reward -= 1.0
 
-func _on_area_2d_body_entered(body):
+func _on_area_2d_body_entered(_body):
 	position = Vector2(1024.0, 576.0)
 	ai_controller_2d.reward -= 1.0
 	ai_controller_2d.reset()
