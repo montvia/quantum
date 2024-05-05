@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cbql6yc4eqw5j"]
+[gd_scene load_steps=45 format=3 uid="uid://cbql6yc4eqw5j"]
 
 [ext_resource type="Script" path="res://jugador.gd" id="2_2k4xm"]
 [ext_resource type="Texture2D" uid="uid://dyrtdjix26vcu" path="res://TopDownCharacter/Character/Character_Down.png" id="2_pqgop"]
@@ -292,9 +292,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3ici"]
 size = Vector2(96, 96)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ej13c"]
-size = Vector2(96, 104)
-
 [node name="jugador" type="CharacterBody2D" groups=["jugador"]]
 position = Vector2(960, 576)
 script = ExtResource("2_2k4xm")
@@ -309,11 +306,3 @@ animation = &"down"
 [node name="Coll_jugador" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_l3ici")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="coll_area_jugador" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_ej13c")
-
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

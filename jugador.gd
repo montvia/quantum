@@ -7,7 +7,27 @@ var animation_walk : float = 1.5
 var animation_sprint = 4
 var is_human : bool = true
 
+	
+
 @onready var ai_controller_2d: Node2D = $AIController2D2
+
+
+func _on_area_key_1_body_entered(_body):
+	print("Hello")
+	position = Vector2(1024.0, 576.0)
+	ai_controller_2d.reward += 1.0
+
+func _on_area_door_1_body_entered(_body):
+	position = Vector2(1024.0, 576.0)
+	if "door_1" in Global.is_open_door:
+		ai_controller_2d.reward += 1.0
+	else:
+		ai_controller_2d.reward -= 1.0
+
+func _on_area_2d_body_entered(body):
+	position = Vector2(1024.0, 576.0)
+	ai_controller_2d.reward -= 1.0
+	ai_controller_2d.reset()
 
 
 func _physics_process(delta):
@@ -61,30 +81,7 @@ func _physics_process(delta):
 		if is_sprinting:
 			mouvment *= 2 # velocitat * 2
 			
-	move_and_collide(mouvment * delta)	
+	move_and_collide(mouvment * delta)
+	#move_and_slide()	
 	
-	
-func _on_key_1_body_entered(_body: Node2D) -> void:
-	position = Vector2(960.0, 576.0)
-	ai_controller_2d.reward += 1.0
 
-func _on_door_1_body_entered(_body: Node2D) -> void:
-	position = Vector2(960.0, 576.0)
-	if "door_1" in Global.is_open_door:
-		ai_controller_2d.reward += 1.0
-#no borrar --->	#ai_controller_2d.reset()
-
-
-
-
-'''
-func _on_area_2d_area_entered(area):
-	if area.is_in_goup("door"):
-	pass # Replace with function body.
-'''
-
-	
-	
-	
-func _ready():
-	pass

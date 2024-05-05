@@ -1,12 +1,20 @@
 extends Node2D
 
+var door_name : String = "door_1"
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	pass 
+	print(self.name)
+	
 
 
 
-func _on_area_key_body_entered(_body):
-	Global.keys_founded.append("door_" + self.name.split("_")[1])
+#func _on_area_key_body_entered(_body):
+	
+
+
+func _on_area_key_1_body_entered(body):
+	#Global.keys_founded.append("door_" + self.name.split("_")[1])
+	Global.keys_founded.append(door_name)
 	queue_free()
+	

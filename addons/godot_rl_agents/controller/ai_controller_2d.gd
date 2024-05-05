@@ -42,7 +42,7 @@ func get_obs() -> Dictionary:
 	]
 	else:
 		obs += [ 0, 0,]	
-	print(obs)
+	#print(obs)
 	return {"obs" :obs}
 	
 
