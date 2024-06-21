@@ -14,7 +14,6 @@ func _ready():
 
 
 func _on_area_key_body_entered(_body):
-	#Global.keys_founded.append("door_" + self.name.split("_")[1])
 	Global.keys_founded.append(door_name)
 	queue_free()
 	
